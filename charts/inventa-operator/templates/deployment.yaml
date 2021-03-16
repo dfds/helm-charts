@@ -50,6 +50,10 @@ spec:
               value: "{{ .Values.inventa.enableHttpApi }}"
             - name: INVENTA_OPERATOR_API_ENABLE_AUTH
               value: "{{ .Values.inventa.enableHttpApiAuth }}"
+            {{- range $key, $val := .Values.podEnv }}
+            - name: {{ $val.name }}
+              value: {{ $val.value }}
+            {{- end}}
           ports:
             - name: api
               containerPort: 8090
