@@ -2,8 +2,20 @@ apiVersion: v1
 entries:
   inventa-operator:
   - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2021-03-16T10:24:14.8414177Z"
+    description: A Helm chart for inventa operator
+    digest: a4199f89b62ef8b1a8c8c0d906d50213407813d88af83299125882ce250033ba
+    name: inventa-operator
+    sources:
+    - https://github.com/dfds/inventa
+    type: application
+    urls:
+    - inventa-operator-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: 0.1.1
-    created: "2021-03-16T10:20:08.486146Z"
+    created: "2021-03-16T10:24:14.8341892Z"
     description: A Helm chart for inventa operator
     digest: 55a120e19c0c3f07905bce808a4437c9ca598a8fa01e956376c925825dc0a14a
     name: inventa-operator
@@ -15,7 +27,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2021-03-16T10:20:08.4796393Z"
+    created: "2021-03-16T10:24:14.829449Z"
     description: A Helm chart for inventa operator
     digest: 019a6223dbd4a4cc8e98779c475bb4d80ea7cade22959cd218b6239bc1e85fa0
     name: inventa-operator
@@ -25,4 +37,4 @@ entries:
     urls:
     - inventa-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2021-03-16T10:20:08.4700641Z"
+generated: "2021-03-16T10:24:14.8241544Z"
