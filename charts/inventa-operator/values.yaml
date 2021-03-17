@@ -17,6 +17,7 @@ priorityClassName: ""
 
 rbac:
   create: true
+  installOnlyRbac: false
 
 inventa:
   authClientId: ""
