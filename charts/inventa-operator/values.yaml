@@ -15,6 +15,9 @@ nameOverride: ""
 fullnameOverride: ""
 priorityClassName: ""
 
+rbac:
+  create: true
+
 inventa:
   authClientId: ""
   authTenantId: ""
