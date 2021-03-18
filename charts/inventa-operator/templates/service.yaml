@@ -1,3 +1,4 @@
+{{- if not .Values.rbac.installOnlyRbac }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -19,3 +20,4 @@ spec:
             
   selector:
     {{- include "inventa-operator.selectorLabels" . | nindent 4 }}
+{{- end}}

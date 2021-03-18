@@ -1,3 +1,4 @@
+{{- if or .Values.rbac.create .Values.rbac.installOnlyRbac }}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -23,3 +24,4 @@ subjects:
 - kind: ServiceAccount
   name: {{ include "inventa-operator.serviceAccountName" . }}
   namespace: {{ .Release.Namespace}}
+{{- end }}  
