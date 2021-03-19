@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "inventa-api.fullname" . }}
+  labels:
+    {{- include "inventa-api.labels" . | nindent 4 }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  selector:
+    matchLabels:
+      {{- include "inventa-api.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        {{- include "inventa-api.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "inventa-api.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: INVENTA_API_AUTH_ENABLE
+              value: "{{ .Values.inventa.authEnable }}"
+            - name: INVENTA_API_AUTH_CLIENT_ID
+              value: "{{ .Values.inventa.authClientId }}"
+            - name: INVENTA_API_AUTH_CLIENT_SECRET
+              value: "{{ .Values.inventa.authClientSecret }}"
+            - name: INVENTA_API_AUTH_CLIENT_SCOPES
+              value: "{{ .Values.inventa.authClientScopes }}"
+            - name: INVENTA_API_AUTH_TENANT_ID
+              value: "{{ .Values.inventa.authTenantId }}"
+            - name: INVENTA_API_OPERATOR_URLS
+              value: "{{ .Values.inventa.operatorUrls }}"
+            {{- range $key, $val := .Values.podEnv }}
+            - name: {{ $val.name }}
+              value: {{ $val.value }}
+            {{- end}}
+          ports:
+            - name: api
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /swagger
+              port: api
+          readinessProbe:
+            httpGet:
+              path: /swagger
+              port: api
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
