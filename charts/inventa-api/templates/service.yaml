@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "inventa-api.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "inventa-api.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: api
+      protocol: TCP
+      name: api
+  selector:
+    {{- include "inventa-api.selectorLabels" . | nindent 4 }}
