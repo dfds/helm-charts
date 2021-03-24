@@ -34,13 +34,13 @@ spec:
           env:
             - name: INVENTA_API_AUTH_ENABLE
               value: "{{ .Values.inventa.authEnable }}"
-            - name: INVENTA_API_AUTH_CLIENT_ID
+            - name: INVENTA_API_AzureAd__ClientId
               value: "{{ .Values.inventa.authClientId }}"
             - name: INVENTA_API_AUTH_CLIENT_SECRET
               value: "{{ .Values.inventa.authClientSecret }}"
             - name: INVENTA_API_AUTH_CLIENT_SCOPES
               value: "{{ .Values.inventa.authClientScopes }}"
-            - name: INVENTA_API_AUTH_TENANT_ID
+            - name: INVENTA_API_AzureAd__TenantId
               value: "{{ .Values.inventa.authTenantId }}"
             - name: INVENTA_API_OPERATOR_URLS
               value: "{{ .Values.inventa.operatorUrls }}"
