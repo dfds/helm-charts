@@ -3,7 +3,7 @@ entries:
   inventa-api:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-10-07T15:20:09.7792109+02:00"
+    created: "2021-10-07T15:25:48.7449198+02:00"
     description: A Helm chart for inventa-api which acts as a master for multiple inventa-operators
     digest: 2300650a5350fc5ab5ddef1820377fe7818b084115b107406eb1634910c5a5a2
     name: inventa-api
@@ -13,7 +13,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2021-10-07T15:20:09.7788073+02:00"
+    created: "2021-10-07T15:25:48.7444656+02:00"
     description: A Helm chart for Kubernetes
     digest: 6facd719ffedcc82c3e412a7635759a866e150693bda3adee25108b3743687aa
     name: inventa-api
@@ -23,8 +23,20 @@ entries:
     version: 0.1.0
   inventa-operator:
   - apiVersion: v2
+    appVersion: 0.1.6
+    created: "2021-10-07T15:25:48.7496401+02:00"
+    description: A Helm chart for inventa operator
+    digest: 310743ee254f10ed5920d3a6fd97b2e8963681558eb85d27f14e57e92dcbe178
+    name: inventa-operator
+    sources:
+    - https://github.com/dfds/inventa
+    type: application
+    urls:
+    - inventa-operator-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
     appVersion: 0.1.5
-    created: "2021-10-07T15:20:09.782552+02:00"
+    created: "2021-10-07T15:25:48.7491247+02:00"
     description: A Helm chart for inventa operator
     digest: 1559f75b17aa22910ece54125237ca1a95c662f4755a70375cd7df99b83a5af6
     name: inventa-operator
@@ -36,7 +48,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 0.1.4
-    created: "2021-10-07T15:20:09.7820346+02:00"
+    created: "2021-10-07T15:25:48.7486204+02:00"
     description: A Helm chart for inventa operator
     digest: 5cc6df7cb9c7e1ba57b40773ea4c2478c9b87bc675e91c9ce95ddc75b22dd0f7
     name: inventa-operator
@@ -48,7 +60,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 0.1.3
-    created: "2021-10-07T15:20:09.7814577+02:00"
+    created: "2021-10-07T15:25:48.7467305+02:00"
     description: A Helm chart for inventa operator
     digest: fcc1e1e146f83e12af467736295333ab9d20868d8a8cb3dd074cd48a023bb239
     name: inventa-operator
@@ -60,7 +72,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 0.1.2
-    created: "2021-10-07T15:20:09.7809457+02:00"
+    created: "2021-10-07T15:25:48.7462974+02:00"
     description: A Helm chart for inventa operator
     digest: a4199f89b62ef8b1a8c8c0d906d50213407813d88af83299125882ce250033ba
     name: inventa-operator
@@ -72,7 +84,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 0.1.1
-    created: "2021-10-07T15:20:09.7804777+02:00"
+    created: "2021-10-07T15:25:48.7458511+02:00"
     description: A Helm chart for inventa operator
     digest: 55a120e19c0c3f07905bce808a4437c9ca598a8fa01e956376c925825dc0a14a
     name: inventa-operator
@@ -84,7 +96,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2021-10-07T15:20:09.7796627+02:00"
+    created: "2021-10-07T15:25:48.7453656+02:00"
     description: A Helm chart for inventa operator
     digest: 019a6223dbd4a4cc8e98779c475bb4d80ea7cade22959cd218b6239bc1e85fa0
     name: inventa-operator
@@ -94,4 +106,4 @@ entries:
     urls:
     - inventa-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-07T15:20:09.7780755+02:00"
+generated: "2021-10-07T15:25:48.7438587+02:00"
