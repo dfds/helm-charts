@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: dfdsdk/inventa-operator
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
@@ -33,6 +33,10 @@ inventa:
   enableHttpApi: true
   # Enables auth on all HTTP endpoints(not including metrics)
   enableHttpApiAuth: false
+  # Enables Crossplane support
+  enableCrossplaneApi: false
+  # Crossplane xgql service endpoint
+  crossplaneEndpoint: "http://crossplane-host-placeholder:8080/query"
 
 serviceAccount:
   # Specifies whether a service account should be created

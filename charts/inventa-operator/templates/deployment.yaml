@@ -51,6 +51,10 @@ spec:
               value: "{{ .Values.inventa.enableHttpApi }}"
             - name: INVENTA_OPERATOR_API_ENABLE_AUTH
               value: "{{ .Values.inventa.enableHttpApiAuth }}"
+            - name: INVENTA_OPERATOR_API_ENABLE_CROSSPLANE
+              value: "{{ .Values.inventa.enableCrossplaneApi }}"     
+            - name: INVENTA_CROSSPLANE_ENDPOINT
+              value: "{{ .Values.inventa.crossplaneEndpoint }}"                         
             {{- range $key, $val := .Values.podEnv }}
             - name: {{ $val.name }}
               value: {{ $val.value }}
