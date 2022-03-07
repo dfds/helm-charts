@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "crossplane-operator-dfds.fullname" . }}
+  labels:
+    {{- include "crossplane-operator-dfds.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "crossplane-operator-dfds.selectorLabels" . | nindent 4 }}
