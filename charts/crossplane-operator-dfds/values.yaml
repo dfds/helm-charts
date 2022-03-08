@@ -14,6 +14,10 @@ crossplaneOperatorDfds:
   enableAnnotionName: "dfds-crossplane-enabled"
   awsAccountAnnotationName: "dfds-aws-account-id"
 
+rbac:
+  create: true
+  installOnlyRbac: false
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
