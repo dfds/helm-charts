@@ -1,0 +1,1 @@
+Annotate namespaces with {{ .Values.crossplaneOperatorDfds.enableAnnotionName }}=true and ensure the annotation {{ .Values.crossplaneOperatorDfds.awsAccountAnnotationName }}=####### is set with a valid AWS Account ID. The {{ .Release.Name }} will enable the necessary AWS ProviderConfig and RBAC roles in that capability namespace
