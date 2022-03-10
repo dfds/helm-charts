@@ -39,6 +39,8 @@ spec:
               value: {{ .Values.crossplaneOperatorDfds.enableAnnotionName }}
             - name: DFDS_CROSSPLANE_AWS_ACCOUNT_ID_ANNOTATION_NAME
               value: {{ .Values.crossplaneOperatorDfds.awsAccountAnnotationName }}
+            - name: DFDS_CROSSPLANE_PKG_ALLOWED_API_GROUPS
+              value: {{ .Values.crossplaneOperatorDfds.allowedApiGroups }}
               
           # ports:
           #   - name: http
