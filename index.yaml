@@ -3,7 +3,17 @@ entries:
   crossplane-operator-dfds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-09T15:26:48.877132+01:00"
+    created: "2022-03-10T09:22:16.321392+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 10bddff1116743e3b8ffb9de95f05765ba7b1708d7483952c0827aa0121a62b4
+    name: crossplane-operator-dfds
+    type: application
+    urls:
+    - crossplane-operator-dfds-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-10T09:22:16.320713+01:00"
     description: A Helm chart for Kubernetes
     digest: fbcb6957981688f42b992d85dce80902806c509abfe1f83c9ec2154c4a5f8b99
     name: crossplane-operator-dfds
@@ -14,7 +24,7 @@ entries:
   inventa-api:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-03-09T15:26:48.881275+01:00"
+    created: "2022-03-10T09:22:16.324491+01:00"
     description: A Helm chart for inventa-api which acts as a master for multiple
       inventa-operators
     digest: 2300650a5350fc5ab5ddef1820377fe7818b084115b107406eb1634910c5a5a2
@@ -25,7 +35,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-03-09T15:26:48.879394+01:00"
+    created: "2022-03-10T09:22:16.323769+01:00"
     description: A Helm chart for Kubernetes
     digest: 6facd719ffedcc82c3e412a7635759a866e150693bda3adee25108b3743687aa
     name: inventa-api
@@ -36,7 +46,7 @@ entries:
   inventa-operator:
   - apiVersion: v2
     appVersion: 0.1.7
-    created: "2022-03-09T15:26:48.903765+01:00"
+    created: "2022-03-10T09:22:16.331639+01:00"
     description: A Helm chart for inventa operator
     digest: 6df327a3263eb7799a23c52bd8e4d802f519823c9ad93fe08e0be5d43007d576
     name: inventa-operator
@@ -48,7 +58,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 0.1.6
-    created: "2022-03-09T15:26:48.901452+01:00"
+    created: "2022-03-10T09:22:16.330921+01:00"
     description: A Helm chart for inventa operator
     digest: 310743ee254f10ed5920d3a6fd97b2e8963681558eb85d27f14e57e92dcbe178
     name: inventa-operator
@@ -60,7 +70,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 0.1.5
-    created: "2022-03-09T15:26:48.896925+01:00"
+    created: "2022-03-10T09:22:16.330179+01:00"
     description: A Helm chart for inventa operator
     digest: 1559f75b17aa22910ece54125237ca1a95c662f4755a70375cd7df99b83a5af6
     name: inventa-operator
@@ -72,7 +82,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 0.1.4
-    created: "2022-03-09T15:26:48.89461+01:00"
+    created: "2022-03-10T09:22:16.328689+01:00"
     description: A Helm chart for inventa operator
     digest: 5cc6df7cb9c7e1ba57b40773ea4c2478c9b87bc675e91c9ce95ddc75b22dd0f7
     name: inventa-operator
@@ -84,7 +94,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 0.1.3
-    created: "2022-03-09T15:26:48.892219+01:00"
+    created: "2022-03-10T09:22:16.327948+01:00"
     description: A Helm chart for inventa operator
     digest: fcc1e1e146f83e12af467736295333ab9d20868d8a8cb3dd074cd48a023bb239
     name: inventa-operator
@@ -96,7 +106,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 0.1.2
-    created: "2022-03-09T15:26:48.888917+01:00"
+    created: "2022-03-10T09:22:16.327081+01:00"
     description: A Helm chart for inventa operator
     digest: a4199f89b62ef8b1a8c8c0d906d50213407813d88af83299125882ce250033ba
     name: inventa-operator
@@ -108,7 +118,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 0.1.1
-    created: "2022-03-09T15:26:48.886613+01:00"
+    created: "2022-03-10T09:22:16.326228+01:00"
     description: A Helm chart for inventa operator
     digest: 55a120e19c0c3f07905bce808a4437c9ca598a8fa01e956376c925825dc0a14a
     name: inventa-operator
@@ -120,7 +130,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-03-09T15:26:48.8845+01:00"
+    created: "2022-03-10T09:22:16.325355+01:00"
     description: A Helm chart for inventa operator
     digest: 019a6223dbd4a4cc8e98779c475bb4d80ea7cade22959cd218b6239bc1e85fa0
     name: inventa-operator
@@ -130,4 +140,4 @@ entries:
     urls:
     - inventa-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-09T15:26:48.876012+01:00"
+generated: "2022-03-10T09:22:16.318113+01:00"
