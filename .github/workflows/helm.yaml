@@ -3,10 +3,8 @@
 name: Helm Release
 
 on:
-  # push:
-  #   branches: [ "main", "master" ]
-  # pull_request:
-  #   branches: [ "main", "master" ]
+  push:
+    branches: [ "main", "master" ]
 
   workflow_dispatch:
 
@@ -44,7 +42,7 @@ jobs:
       - name: Update Helm repo index
         run: linux-amd64/helm repo index .
 
-      - name: Remove Helm binary
+      - name: Remove Helm CLI
         run: |
           if [[ -d "linux-amd" ]]; then
             rm -rf "linux-amd"
