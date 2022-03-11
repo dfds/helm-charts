@@ -8,11 +8,12 @@ image:
   repository: dfdsdk/crossplane-operator-dfds-controller
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v0.0.1"
+  tag: "v0.0.2"
 
 crossplaneOperatorDfds:
   enableAnnotionName: "dfds-crossplane-enabled"
   awsAccountAnnotationName: "dfds-aws-account-id"
+  allowedApiGroups: "storage.xplane.dfds.cloud,certs.xplane.dfds.cloud,cdn.xplane.dfds.cloud,dns.xplane.dfds.cloud,messaging.xplane.dfds.cloud,cache.xplane.dfds.cloud,identity.xplane.dfds.cloud,database.xplane.dfds.cloud,networking.xplane.dfds.cloud"
 
 rbac:
   create: true
