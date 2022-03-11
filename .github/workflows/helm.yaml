@@ -10,6 +10,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  HELM_VERSION: "v3.8.1"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +21,7 @@ jobs:
 
       - name: Download Helm CLI
         run: |
-          curl -L https://get.helm.sh/helm-v{{ helm_version }}-linux-amd64.tar.gz -o helm.tar.gz
+          curl -L https://get.helm.sh/helm-$HELM_VERSION-linux-amd64.tar.gz -o helm.tar.gz
           tar zxvf helm.tar.gz
           chmod +x linux-amd64/helm
 
@@ -30,7 +33,7 @@ jobs:
 
       - name: Switch branch and publish
         run: |
-          git checkout -f gh-pages
+          git checkout -f gh-pages # Force ensure only new chart files get copied to the gh-pages branch
           linux-amd64/helm repo index .
           if [[ -d "linux-amd" ]]; then
             rm -rf "linux-amd"
