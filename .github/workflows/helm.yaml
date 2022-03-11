@@ -4,9 +4,9 @@ name: Helm Release
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main", "master" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "main", "master" ]
 
   workflow_dispatch:
 
@@ -16,10 +16,24 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Run a multi-line script
+      - name: Download Helm CLI
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          curl -L https://get.helm.sh/helm-v{{ helm_version }}-linux-amd64.tar.gz -o helm.tar.gz
+          tar zxvf helm.tar.gz
+          chmod +x linux-amd64/helm
+
+      - name: Create Helm Releases
+        run : |
+          for f in charts/*; do
+            linux-amd64/helm package $f
+          done
+
+      - name: Switch branch and publish
+        run: |
+          git checkout -f gh-pages
+          linux-amd64/helm repo index .
+          if [[ -d "linux-amd" ]]; then
+            rm -rf "linux-amd"
+          fi
+          git add index.yaml *.tgz
+          git commit -m "Upgraded the Helm index"
