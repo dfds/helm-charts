@@ -33,12 +33,24 @@ jobs:
             linux-amd64/helm package $f
           done
 
-      - name: Switch branch and publish
+      - name: Switch to GitHub Pages branch
+        run: git checkout -f gh-pages # Force ensure only new chart files get copied to the gh-pages branch
+
+      - name: Configure git author
         run: |
-          git checkout -f gh-pages # Force ensure only new chart files get copied to the gh-pages branch
-          linux-amd64/helm repo index .
+          git config --global user.email "65592364+devex-sa@users.noreply.github.com"
+          git config --global user.name "Dev-Excellence Service Account"
+
+      - name: Update Helm repo index
+        run: linux-amd64/helm repo index .
+
+      - name: Remove Helm binary
+        run: |
           if [[ -d "linux-amd" ]]; then
             rm -rf "linux-amd"
           fi
+      - name: Save the new Helm index
+        run: |
           git add index.yaml *.tgz
-          git commit -m "Upgraded the Helm index"
+          git commit -m "Updated the Helm index"
+          git push
