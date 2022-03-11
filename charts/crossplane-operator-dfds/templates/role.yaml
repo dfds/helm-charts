@@ -14,6 +14,7 @@ rules:
   verbs:
   - create
   - delete
+  - escalate
   - get
   - list
   - patch
@@ -112,25 +113,26 @@ rules:
   - patch
   - update
 - apiGroups:
-  - rbac
+  - rbac.authorization.k8s.io
   resources:
   - rolebindings
   verbs:
   - create
   - delete
+  - escalate
   - get
   - list
   - patch
   - update
   - watch
 - apiGroups:
-  - rbac
+  - rbac.authorization.k8s.io
   resources:
   - rolebindings/finalizers
   verbs:
   - update
 - apiGroups:
-  - rbac
+  - rbac.authorization.k8s.io
   resources:
   - rolebindings/status
   verbs:
@@ -138,29 +140,32 @@ rules:
   - patch
   - update
 - apiGroups:
-  - rbac
+  - rbac.authorization.k8s.io
   resources:
   - roles
   verbs:
+  - bind
   - create
   - delete
+  - escalate
   - get
   - list
   - patch
   - update
   - watch
 - apiGroups:
-  - rbac
+  - rbac.authorization.k8s.io
   resources:
   - roles/finalizers
   verbs:
   - update
 - apiGroups:
-  - rbac
+  - rbac.authorization.k8s.io
   resources:
   - roles/status
   verbs:
   - get
   - patch
   - update
+
 {{- end }}  
