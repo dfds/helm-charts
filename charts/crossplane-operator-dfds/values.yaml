@@ -13,7 +13,7 @@ image:
 crossplaneOperatorDfds:
   enableAnnotionName: "dfds-crossplane-enabled"
   awsAccountAnnotationName: "dfds-aws-account-id"
-  allowedApiGroups: "storage.xplane.dfds.cloud,certs.xplane.dfds.cloud,cdn.xplane.dfds.cloud,dns.xplane.dfds.cloud,messaging.xplane.dfds.cloud,cache.xplane.dfds.cloud,identity.xplane.dfds.cloud,database.xplane.dfds.cloud,networking.xplane.dfds.cloud"
+  allowedApiGroups: "xplane.dfds.cloud,compute.xplane.dfds.cloud,storage.xplane.dfds.cloud,certs.xplane.dfds.cloud,cdn.xplane.dfds.cloud,dns.xplane.dfds.cloud,messaging.xplane.dfds.cloud,cache.xplane.dfds.cloud,identity.xplane.dfds.cloud,database.xplane.dfds.cloud,network.xplane.dfds.cloud"
 
 rbac:
   create: true
