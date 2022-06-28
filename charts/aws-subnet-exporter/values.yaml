@@ -1,0 +1,48 @@
+# Default values for subnet-exporter-basic.
+# This is a YAML-formatted file.
+
+replicaCount: 1
+
+image:
+  repository: nginx:1.21.6
+  pullPolicy: IfNotPresent
+  # /!\ code found specifies 0.2, checking deployment shows 0.3
+  tag: ""
+
+appName: aws-subnet-exporter
+
+labels:
+  appNamePrefix: aws-subnet-exporter
+
+containers:
+- env:
+  - name: REGION
+    value: "eu-west-1"
+  - name: FILTER
+    value: "*eks*"
+  - name: PERIOD
+    value: "30s"
+  - name: PORT
+    value: ":8080"
+
+serviceAccount:
+  create: true
+  annotations:
+  name: "subnet-exporter"
+
+service:
+  type: ClusterIP
+  port: 80
+  labels: {}
+  spec:
+    ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+      name: metrics
+    selector:
+      app: aws-subnet-exporter
+
+resources: {}
+
+
