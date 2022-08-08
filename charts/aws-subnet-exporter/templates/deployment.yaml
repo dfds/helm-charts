@@ -27,7 +27,6 @@ spec:
         imagePullPolicy: {{.Values.image.pullPolicy | default "IfNotPresent"}}
         name: {{$appname}}
         resources:
-          container:
-{{- toYaml .Values.containers | nindent 12 }}
+{{- toYaml .Values.resources | nindent 12 }}
       serviceAccountName: {{$serviceAccountName}}
 
