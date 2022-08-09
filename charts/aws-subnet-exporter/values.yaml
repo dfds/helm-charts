@@ -4,7 +4,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx:1.21.6
+  repository: dfdsdk/aws-subnet-exporter:0.3
   pullPolicy: IfNotPresent
   # /!\ code found specifies 0.2, checking deployment shows 0.3
   tag: ""
