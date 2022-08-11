@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 #variable definitions
-{{- $appname := printf "%s-%s" .Values.labels.appNamePrefix .Release.Name}}
+{{- $appname := printf "%s-%s" .Values.appName .Release.Name}}
 {{- $serviceAccountName := .Values.serviceAccount.name | default "SubnetExporter"}}
 
 metadata:

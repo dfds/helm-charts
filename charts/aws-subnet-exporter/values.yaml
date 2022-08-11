@@ -12,7 +12,7 @@ image:
 appName: aws-subnet-exporter
 
 labels:
-  appNamePrefix: aws-subnet-exporter
+  appNamePrefix:
 
 containers:
 - env:
