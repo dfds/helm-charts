@@ -28,6 +28,8 @@ containers:
 serviceAccount:
   create: true
   annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::accountId:role/SubnetExporter
+    eks.amazonaws.com/sts-regional-endpoints: "true"
   name: "subnet-exporter"
 
 service:
@@ -42,6 +44,13 @@ service:
       name: metrics
     selector:
       app: aws-subnet-exporter
+
+securityContext:
+  runAsUser: 10001
+  runAsGroup: 3000
+  runAsNonRoot: true
+  allowPrivilegeEscalation: false
+  
 
 resources: {}
 
