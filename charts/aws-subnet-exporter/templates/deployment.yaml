@@ -1,0 +1,32 @@
+apiVersion: apps/v1 
+#"app/"{{.Values.apiVersion}}
+kind: Deployment
+
+#variable definitions
+{{- $appname := printf "%s-%s" .Values.appName .Release.Name}}
+{{- $serviceAccountName := .Values.serviceAccount.name | default "SubnetExporter"}}
+
+metadata:
+  name: {{$appname}}
+  labels: {}
+       
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{$appname}}
+  template:
+    metadata:
+      labels:
+        app: {{$appname}}
+    spec:
+      automountServiceAccountToken: true
+      containers:
+{{- toYaml .Values.containers | nindent 6 }}
+        image: {{.Values.image.repository}}
+        imagePullPolicy: {{.Values.image.pullPolicy | default "IfNotPresent"}}
+        name: {{$appname}}
+        resources:
+{{- toYaml .Values.resources | nindent 12 }}
+      serviceAccountName: {{$serviceAccountName}}
+

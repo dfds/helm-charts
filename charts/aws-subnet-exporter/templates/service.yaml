@@ -1,0 +1,12 @@
+{{- $appname := printf "%s-%s" .Values.labels.appNamePrefix .Release.Name}}
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.appName}}
+  labels:
+  {{- range $key, $val := .Values.service.labels}}
+    {{$key}}: {{$val}}
+  {{- end }}
+spec:
+{{- tpl (toYaml .Values.service.spec) . | nindent 2}}

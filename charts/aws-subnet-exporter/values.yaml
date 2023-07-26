@@ -1,0 +1,57 @@
+# Default values for asws-subnet-exporter.
+# This is a YAML-formatted file.
+
+replicaCount: 1
+
+image:
+  repository: dfdsdk/aws-subnet-exporter:0.3
+  pullPolicy: IfNotPresent
+  # /!\ code found specifies 0.2, checking deployment shows 0.3
+  tag: ""
+
+appName: aws-subnet-exporter
+
+labels:
+  appNamePrefix:
+
+containers:
+- env:
+  - name: REGION
+    value: "eu-west-1"
+  - name: FILTER
+    value: "*eks*"
+  - name: PERIOD
+    value: "30s"
+  - name: PORT
+    value: ":8080"
+
+serviceAccount:
+  create: true
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::accountId:role/SubnetExporter
+    eks.amazonaws.com/sts-regional-endpoints: "true"
+  name: "subnet-exporter"
+
+service:
+  type: ClusterIP
+  port: 80
+  labels: {}
+  spec:
+    ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+      name: metrics
+    selector:
+      app: aws-subnet-exporter
+
+securityContext:
+  runAsUser: 10001
+  runAsGroup: 3000
+  runAsNonRoot: true
+  allowPrivilegeEscalation: false
+  
+
+resources: {}
+
+
